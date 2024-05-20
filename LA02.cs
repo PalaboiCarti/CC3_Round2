@@ -39,7 +39,7 @@ public class HelloWorld
   			}
   		  else
   			{
-  			  Console.WriteLine ("The fuck iz u talmbout");
+  			  Console.WriteLine ("whut u talmbout");
   			}
   
   		}
