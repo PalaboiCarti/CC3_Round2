@@ -7,11 +7,11 @@ public class Hero
     public int attack;
     public int defense;
     
-    public Hero(string name, string type, string abilityName)
+    public Hero(string heroName, string heroType, string heroAbility)
     {
-        name = name;
-        type = type;
-        abilityName = abilityName;
+        name = heroName;
+        type = heroType;
+        abilityName = heroAbility;
         
         if(type == "defender"){
             attack = 10;
