@@ -1,5 +1,7 @@
 using System;
 
+using System;
+
 public class Cigarette
 {
     //attributes
@@ -27,9 +29,7 @@ public class Cigarette
             if(value < 0){
                 Console.WriteLine($"Imposible naman yan tol eh.");
                 Console.WriteLine("");
-            }
-            amount = value;
-            
+            } else {amount = value;}
         }
     }
     
@@ -40,9 +40,7 @@ public class Cigarette
             if(value < 0){
                 Console.WriteLine($"Ayos ka din eh noh, sinisingil mo ata ako ah.");
                 Console.WriteLine("");
-            }
-            price = value;
-            
+            } else {price = value;}
         }
     }
     
