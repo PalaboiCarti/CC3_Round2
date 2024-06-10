@@ -3,60 +3,22 @@ using System;
 public class Cigarette
 {
     //attributes
-    private string name;
-    public string propName{
-        get{return name;}
-        set{name = value;}
-    }
-    
-    private string brand;
-    public string propBrand{
-        get{return brand;}
-        set{brand = value;}
-    }
-    private string quality;
-    public string propQuality{
-        get{return quality;}
-        set{quality = value;}
-    }
-    
-    private int amount;
-    public int propAmount{
-        get{return amount;}
-        set{
-            if(value < 0){
-                Console.WriteLine($"Imposible naman yan tol eh.");
-                Console.WriteLine("");
-            } else {amount = value;}
-        }
-    }
-    
-    private int price;
-    public int propPrice{
-        get{return price;}
-        set{
-            if(value < 0){
-                Console.WriteLine($"Ayos ka din eh noh, sinisingil mo ata ako ah.");
-                Console.WriteLine("");
-            } else {price = value;}
-        }
-    }
-    
-    private bool cancer;
-    public bool propCancer{
-        get{return cancer;}
-        set{cancer = value;}
-    }
+    public string name{get;set;}
+    public string brand{get;set;}
+    public string quality{get;set;}
+    public int amount{get;set;}
+    public int price{get;set;}
+    public bool cancer{get;set;}
     
     //constructor
     public Cigarette(string Name, string Brand, string Quality, int Amount, int Price, bool Cancer)
     {
-        propName = Name;
-        propBrand = Brand;
-        propQuality = Quality;
-        propAmount = Amount;
-        propPrice = Price;
-        propCancer = Cancer;
+        name = Name;
+        brand = Brand;
+        quality = Quality;
+        amount = Amount;
+        price = Price;
+        cancer = Cancer;
     }
     
     //method
