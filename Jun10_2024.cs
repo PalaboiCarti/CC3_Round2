@@ -39,8 +39,7 @@ public class Cigarette
     }
     
     //constructor
-    public Cigarette(string Name, string Brand, string Quality, int Amount, int Price, bool Cancer)
-    {
+    public Cigarette(string Name, string Brand, string Quality, int Amount, int Price, bool Cancer){
         name = Name;
         brand = Brand;
         quality = Quality;
@@ -65,17 +64,10 @@ public class Cigarette
     }
 }
 
+
 class Program{
     static void Main(){
         Cigarette MarlboroRed = new Cigarette("Marlboro Red", "Marlboro", "Goodshit", 20, 180, true);
-        
-        MarlboroRed.propName = "Marlboro Red";
-        MarlboroRed.propBrand = "Marlboro";
-        MarlboroRed.propQuality = "Goodshit";
-        MarlboroRed.propAmount = 20;
-        MarlboroRed.propPrice = 180;
-        MarlboroRed.propCancer = true;
-        
         MarlboroRed.info();
     }
 }
