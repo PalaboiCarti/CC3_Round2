@@ -23,13 +23,27 @@ public class Cigarette
     private int amount;
     public int propAmount{
         get{return amount;}
-        set{amount = value;}
+        set{
+            if(value < 0){
+                Console.WriteLine($"Imposible naman yan tol eh.");
+                Console.WriteLine("");
+            }
+            amount = value;
+            
+        }
     }
     
     private int price;
     public int propPrice{
         get{return price;}
-        set{price = value;}
+        set{
+            if(value < 0){
+                Console.WriteLine($"Ayos ka din eh noh, sinisingil mo ata ako ah.");
+                Console.WriteLine("");
+            }
+            price = value;
+            
+        }
     }
     
     private bool cancer;
@@ -39,13 +53,14 @@ public class Cigarette
     }
     
     //constructor
-    public Cigarette(string Name, string Brand, string Quality, int Amount, int Price, bool Cancer){
-        name = Name;
-        brand = Brand;
-        quality = Quality;
-        amount = Amount;
-        price = Price;
-        cancer = Cancer;
+    public Cigarette(string Name, string Brand, string Quality, int Amount, int Price, bool Cancer)
+    {
+        propName = Name;
+        propBrand = Brand;
+        propQuality = Quality;
+        propAmount = Amount;
+        propPrice = Price;
+        propCancer = Cancer;
     }
     
     //method
