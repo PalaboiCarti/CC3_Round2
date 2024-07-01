@@ -1,8 +1,8 @@
 using System;
 
-public class HelloWorld
+public class Skibidi
 {
-    static void ConvertKilometersToMiles()
+    static void kmToMi()
     {
         Console.WriteLine("Enter distance in Kilometers (km):");
         double km = Convert.ToDouble(Console.ReadLine());
@@ -10,7 +10,7 @@ public class HelloWorld
         Console.WriteLine($"{km} kilometers is equal to {miles} miles.");
     }
 
-    static void ConvertMilesToKilometers()
+    static void miToKm()
     {
         Console.WriteLine("Enter distance in Miles (mi):");
         double miles = Convert.ToDouble(Console.ReadLine());
@@ -18,7 +18,7 @@ public class HelloWorld
         Console.WriteLine($"{miles} miles is equal to {km} kilometers.");
     }
 
-    static void ConvertCelsiusToFahrenheit()
+    static void celToFah()
     {
         Console.WriteLine("Enter temperature in Celsius (°C):");
         double celsius = Convert.ToDouble(Console.ReadLine());
@@ -26,7 +26,7 @@ public class HelloWorld
         Console.WriteLine($"{celsius}°C is equal to {fahrenheit}°F.");
     }
 
-    static void ConvertFahrenheitToCelsius()
+    static void fahToCel()
     {
         Console.WriteLine("Enter temperature in Fahrenheit (°F):");
         double fahrenheit = Convert.ToDouble(Console.ReadLine());
@@ -34,7 +34,7 @@ public class HelloWorld
         Console.WriteLine($"{fahrenheit}°F is equal to {celsius}°C.");
     }
 
-    static void ConvertUSDollarsToPhilippinePesos()
+    static void usdToPhp()
     {
         Console.WriteLine("Enter amount in USD:");
         double usd = Convert.ToDouble(Console.ReadLine());
@@ -42,7 +42,7 @@ public class HelloWorld
         Console.WriteLine($"{usd} USD is equal to {php} PHP.");
     }
 
-    static void ConvertPhilippinePesosToUSDollars()
+    static void phpToUsd()
     {
         Console.WriteLine("Enter amount in PHP:");
         double php = Convert.ToDouble(Console.ReadLine());
@@ -71,22 +71,22 @@ public class HelloWorld
             switch (choice)
             {
                 case 1:
-                    ConvertKilometersToMiles();
+                    kmToMi();
                     break;
                 case 2:
-                    ConvertMilesToKilometers();
+                    miToKm();
                     break;
                 case 3:
-                    ConvertCelsiusToFahrenheit();
+                    celToFah();
                     break;
                 case 4:
-                    ConvertFahrenheitToCelsius();
+                    fahToCel();
                     break;
                 case 5:
-                    ConvertUSDollarsToPhilippinePesos();
+                    usdToPhp();
                     break;
                 case 6:
-                    ConvertPhilippinePesosToUSDollars();
+                    phpToUsd();
                     break;
                 case 7:
                     Console.WriteLine("Sige, salamat...");
