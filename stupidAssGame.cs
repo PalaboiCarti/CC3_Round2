@@ -8,6 +8,9 @@ public class Game
         Console.WriteLine("What is your name, traveler?");
         string name = Console.ReadLine();
         
+        Console.WriteLine("And what is your ability called?");
+        string abilityName = Console.ReadLine();
+        
         //First Level
         Console.WriteLine("...");
         Console.WriteLine($"Welcome to the supermarket, {name}.");
@@ -16,7 +19,7 @@ public class Game
         
         
         //first battle
-        Ability Skibidi = new Ability("The Mighty Skibidi", "*brrrrrr skibidi dop dop dop yes yes*", 102.5);
+        Ability Skibidi = new Ability(abilityName, "*placeholder ability sounds*", 102.5);
         Player person1 = new Player(name, 300, Skibidi);
         person1.castAbility();
         
