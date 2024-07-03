@@ -1,27 +1,39 @@
 using System;
 
-public class MainProgram
+public class Game
 {
     public static void Main(string[] args)
     {
-        Person Esquibidi = new Person("Esquibidi", 300);
-        Ability Skibidi = new Ability("The Mighty Skibidi", "*brrrrrr skibidi dop dop dop yes yes*", 102.5);
-        Esquibidi.castAbility(Skibidi);
+        //naming the character
+        Console.WriteLine("What is your name, traveler?");
+        string name = Console.ReadLine();
         
-        Person WizardGnome = new Person("Wizard Gnome", 1000);
+        //First Level
+        Console.WriteLine("...");
+        Console.WriteLine($"Welcome to the supermarket, {name}.");
+        Console.WriteLine($"I need your help fighting this wizard gnome; he keeps on messing with my cash register!");
+        Console.WriteLine("_______________________________________");
+        
+        
+        //first battle
+        Player person1 = new Player(name, 300);
+        Ability Skibidi = new Ability("The Mighty Skibidi", "*brrrrrr skibidi dop dop dop yes yes*", 102.5);
+        person1.castAbility(Skibidi);
+        
+        Player person2 = new Player("Wizard Gnome", 1000);
         Ability Gooning = new Ability("Gooning", "*medieval music plays*", 269);
         WizardGnome.castAbility(Gooning);
         
-        Esquibidi.takeDamage(Gooning);
+        person1.takeDamage(Gooning);
     }
 }
 
-class Person
+class Player
 {
     public string Name{get; set;}
-    public double Health{get; set;}
+    private double Health = 300;
     
-    public Person(string name, double health)
+    public Player(string name, double health)
     {
         Name = name;
         Health = health;
