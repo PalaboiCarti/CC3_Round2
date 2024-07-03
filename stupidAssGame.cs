@@ -16,13 +16,13 @@ public class Game
         
         
         //first battle
-        Player person1 = new Player(name, 300);
         Ability Skibidi = new Ability("The Mighty Skibidi", "*brrrrrr skibidi dop dop dop yes yes*", 102.5);
-        person1.castAbility(Skibidi);
+        Player person1 = new Player(name, 300, Skibidi);
+        person1.castAbility();
         
-        Player person2 = new Player("Wizard Gnome", 1000);
         Ability Gooning = new Ability("Gooning", "*medieval music plays*", 269);
-        person2.castAbility(Gooning);
+        Player person2 = new Player("Wizard Gnome", 1000, Gooning);
+        person2.castAbility();
         
         person1.takeDamage(Gooning);
     }
@@ -32,14 +32,17 @@ class Player
 {
     public string Name{get; set;}
     private double Health = 300;
+    public Ability myAbility;
     
-    public Player(string name, double health)
+    
+    public Player(string name, double health, Ability ability)
     {
         Name = name;
         Health = health;
+        myAbility = ability;
     }
     
-    public void castAbility(Ability myAbility)
+    public void castAbility()
     {
         Console.WriteLine($"[Name: {Name}, HP: {Health}]");
         Console.WriteLine($"I, {Name}, cast {myAbility.AbilityName}, here I go!");
