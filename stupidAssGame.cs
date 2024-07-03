@@ -22,7 +22,7 @@ public class Game
         
         Player person2 = new Player("Wizard Gnome", 1000);
         Ability Gooning = new Ability("Gooning", "*medieval music plays*", 269);
-        WizardGnome.castAbility(Gooning);
+        person2.castAbility(Gooning);
         
         person1.takeDamage(Gooning);
     }
