@@ -11,22 +11,22 @@ public class Game
         Console.WriteLine("And what is your ability called?");
         string abilityName = Console.ReadLine();
         
+        Ability person1Ability = new Ability(abilityName, "*placeholder ability sounds*", 102.5);
+        Player person1 = new Player(name, 300, person1Ability);
+        
         //First Level
+        Ability Gooning = new Ability("Gooning", "*medieval music plays*", 269);
+        Player WizardGnome = new Player("Wizard Gnome", 1000, Gooning);
+        
         Console.WriteLine("...");
         Console.WriteLine($"Welcome to the supermarket, {name}.");
         Console.WriteLine($"I need your help fighting this wizard gnome; he keeps on messing with my cash register!");
+        Console.WriteLine($"[{WizardGnome.Name}]: Nyahahaha, I denounce capitalism from every fiber of my being...");
         Console.WriteLine("_______________________________________");
         
-        
-        //first battle
-        Ability Skibidi = new Ability(abilityName, "*placeholder ability sounds*", 102.5);
-        Player person1 = new Player(name, 300, Skibidi);
+        //First battle
         person1.castAbility();
-        
-        Ability Gooning = new Ability("Gooning", "*medieval music plays*", 269);
-        Player person2 = new Player("Wizard Gnome", 1000, Gooning);
-        person2.castAbility();
-        
+        WizardGnome.castAbility();
         person1.takeDamage(Gooning);
     }
 }
