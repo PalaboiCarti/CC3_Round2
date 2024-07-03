@@ -7,6 +7,12 @@ public class MainProgram
         Person Esquibidi = new Person("Esquibidi", 300);
         Ability Skibidi = new Ability("The Mighty Skibidi", "*brrrrrr skibidi dop dop dop yes yes*", 102.5);
         Esquibidi.castAbility(Skibidi);
+        
+        Person WizardGnome = new Person("Wizard Gnome", 1000);
+        Ability Gooning = new Ability("Gooning", "*medieval music plays*", 269);
+        WizardGnome.castAbility(Gooning);
+        
+        Esquibidi.takeDamage(Gooning);
     }
 }
 
@@ -27,7 +33,14 @@ class Person
         Console.WriteLine($"I, {Name}, cast {myAbility.AbilityName}, here I go!");
         Console.WriteLine($"{myAbility.SoundEffect}");
         Console.WriteLine($"*it deals {myAbility.Damage} damage!*");
-        Console.WriteLine("...");
+        Console.WriteLine("_______________________________________");
+    }
+    
+    public void takeDamage(Ability oppAbility)
+    {
+        Health = Health - oppAbility.Damage;
+        Console.WriteLine($"[Name: {Name}, HP: {Health}]");
+        Console.WriteLine($"Ouch! That dealt {oppAbility.Damage} leaving me with {Health} HP!");
     }
     
 }
