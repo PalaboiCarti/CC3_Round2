@@ -4,7 +4,7 @@ public class Game
 {
     public static void Main(string[] args)
     {
-        //naming the character
+        //Character Making
         Console.WriteLine("What is your name, traveler?");
         string name = Console.ReadLine();
         
@@ -15,9 +15,11 @@ public class Game
         Player person1 = new Player(name, 300, person1Ability);
         
         //First Level
+        //Making the WizardGnome
         Ability Gooning = new Ability("Gooning", "*medieval music plays*", 269);
         Player WizardGnome = new Player("Wizard Gnome", 1000, Gooning);
         
+        //Dialogue
         Console.WriteLine("...");
         Console.WriteLine($"Welcome to the supermarket, {name}.");
         Console.WriteLine($"I need your help fighting this wizard gnome; he keeps on messing with my cash register!");
@@ -26,6 +28,7 @@ public class Game
         
         //First battle
         person1.castAbility();
+        WizardGnome.takeDamage(person1.myAbility.Damage);
         WizardGnome.castAbility();
         person1.takeDamage(WizardGnome.myAbility.Damage);
     }
@@ -59,6 +62,7 @@ class Player
         Health = Health - oppDamage;
         Console.WriteLine($"[Name: {Name}, HP: {Health}]");
         Console.WriteLine($"Ouch! That dealt {oppDamage} leaving me with {Health} HP!");
+        Console.WriteLine("_______________________________________");
     }
     
 }
