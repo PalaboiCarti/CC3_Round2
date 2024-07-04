@@ -27,7 +27,7 @@ public class Game
         //First battle
         person1.castAbility();
         WizardGnome.castAbility();
-        person1.takeDamage(Gooning);
+        person1.takeDamage(WizardGnome.myAbility.Damage);
     }
 }
 
@@ -54,11 +54,11 @@ class Player
         Console.WriteLine("_______________________________________");
     }
     
-    public void takeDamage(Ability oppAbility)
+    public void takeDamage(double oppDamage)
     {
-        Health = Health - oppAbility.Damage;
+        Health = Health - oppDamage;
         Console.WriteLine($"[Name: {Name}, HP: {Health}]");
-        Console.WriteLine($"Ouch! That dealt {oppAbility.Damage} leaving me with {Health} HP!");
+        Console.WriteLine($"Ouch! That dealt {oppDamage} leaving me with {Health} HP!");
     }
     
 }
