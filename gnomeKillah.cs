@@ -58,7 +58,7 @@ class Player
         int num = rnd.Next(1, 100);
 
         //Crit Generator
-        if(myAbility.CritRate<=num){
+        if(myAbility.CritRate>=num){
             Console.WriteLine("Critical Hit!");
             myAbility.Damage = myAbility.Damage*2;
         }else {
