@@ -1,17 +1,11 @@
 using System;
 
-public class HelloWorld
+public class CritTesting
 {
     public static void Main(string[] args)
     {
-        Random rnd = new Random();
-        int num = rnd.Next(1, 100);
-        Console.WriteLine(num);
-        
-        Ability ability1 = new Ability("Skibidi Hellscape", "SKIBIDI DOP DOP DOP YES YES YES", 102.5, num);
-        
-        Console.WriteLine(ability1.AbilityName);
-        Console.WriteLine(ability1.Damage);
+        Ability ability1 = new Ability("Skibidi Hellscape", "SKIBIDI DOP DOP DOP YES YES YES", 102.5, 50);
+        ability1.cast();
     }
 }
 
@@ -26,14 +20,26 @@ class Ability
     {
         AbilityName = abilityName;
         SoundEffect = soundEffect;
-        if(critRate<=50){
-            Console.WriteLine("Critical Hit!");
-            damage = damage*2;
-            Damage = damage;
-        }else {
-            Damage = damage;
-        }
         Damage = damage;
         CritRate = critRate;
+    }
+    
+    public void cast()
+    {
+        Console.WriteLine($"I cast {AbilityName}!");
+
+        //RNG Generator
+        Random rnd = new Random();
+        int num = rnd.Next(1, 100);
+
+        //Crit Generator
+        if(CritRate<=num){
+            Console.WriteLine("Critical Hit!");
+            Damage = Damage*2;
+        }else {
+            Damage = Damage;
+        }
+        
+        Console.WriteLine($"{AbilityName} deals {Damage} damage!");
     }
 }
