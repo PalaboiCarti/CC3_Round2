@@ -11,12 +11,12 @@ public class Game
         Console.WriteLine("And what is your ability called?");
         string abilityName = Console.ReadLine();
         
-        Ability person1Ability = new Ability(abilityName, "*placeholder ability sounds*", 102.5, 50);
-        Player person1 = new Player(name, 300, person1Ability);
+        Ability person1Ability = new Ability(abilityName, "*placeholder ability sounds*", 200.5, 50);
+        Player person1 = new Player(name, 700, person1Ability);
         
         //First Level
         //Making the WizardGnome
-        Ability Gooning = new Ability("Gooning", "*medieval music plays*", 269, 20);
+        Ability Gooning = new Ability("Gooning", "*medieval music plays*", 269, 25);
         Player WizardGnome = new Player("Wizard Gnome", 1000, Gooning);
         
         //Dialogue
@@ -27,17 +27,29 @@ public class Game
         Console.WriteLine("_______________________________________");
         
         //First battle
-        person1.castAbility();
-        WizardGnome.takeDamage(person1.myAbility.Damage);
-        WizardGnome.castAbility();
-        person1.takeDamage(WizardGnome.myAbility.Damage);
+        while(person1.Health > 0 || WizardGnome.Health > 0){
+            person1.castAbility();
+            WizardGnome.takeDamage(person1.myAbility.Damage);
+            if (WizardGnome.Health <= 0)
+            {
+                Console.WriteLine($"{WizardGnome.Name} is defeated!");
+                break;
+            }
+            WizardGnome.castAbility();
+            person1.takeDamage(WizardGnome.myAbility.Damage);
+            if (person1.Health <= 0)
+            {
+                Console.WriteLine($"{person1.Name} is defeated!");
+                break;
+            }
+        }
     }
 }
 
 class Player
 {
     public string Name{get; set;}
-    private double Health = 300;
+    public double Health = 300;
     public Ability myAbility;
     
     
