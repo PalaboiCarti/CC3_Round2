@@ -11,13 +11,11 @@ public class Game
         Console.WriteLine("And what is your ability called?");
         string abilityName = Console.ReadLine();
 
-        Player.Ability person1Ability = new Player.Ability(abilityName, "*placeholder ability sounds*", 200.5, 50);
-        Player person1 = new Player(name, 700, person1Ability);
+        Player person1 = new Player(name, 700, abilityName, "*placeholder ability sounds*", 200.5, 50);
 
         // First Level
         // Making the WizardGnome
-        Player.Ability Gooning = new Player.Ability("Gooning", "*medieval music plays*", 269, 25);
-        Player WizardGnome = new Player("Wizard Gnome", 1000, Gooning);
+        Player WizardGnome = new Player("Wizard Gnome", 1000, "Gooning", "*medieval music plays*", 100, 25);
 
         // Dialogue
         Console.WriteLine("...");
@@ -54,11 +52,11 @@ class Player
     public double Health { get; set; }
     public Ability myAbility { get; set; }
 
-    public Player(string name, double health, Ability ability)
+    public Player(string name, double health, string abilityName, string soundEffect, double damage, int critRate)
     {
         Name = name;
         Health = health;
-        myAbility = ability;
+        myAbility = new Ability(abilityName, soundEffect, damage, critRate);
     }
 
     public void castAbility()
