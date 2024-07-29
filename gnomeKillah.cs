@@ -10,8 +10,11 @@ public class Game
 
         Console.WriteLine("And what is your ability called?");
         string abilityName = Console.ReadLine();
+        
+        Console.WriteLine("What does it sound like?");
+        string abilitySound = Console.ReadLine();
 
-        Player person1 = new Player(name, 700, abilityName, "*placeholder ability sounds*", 200.5, 50);
+        Player person1 = new Player(name, 700, abilityName, abilitySound, 200.5, 50);
 
         // First Level
         // Making the WizardGnome
@@ -46,7 +49,7 @@ public class Game
     }
 }
 
-class Player
+public class Player
 {
     public string Name { get; set; }
     public double Health { get; set; }
@@ -57,6 +60,29 @@ class Player
         Name = name;
         Health = health;
         myAbility = new Ability(abilityName, soundEffect, damage, critRate);
+    }
+    
+    public class Ability
+    {
+        public string AbilityName { get; set; }
+        public string SoundEffect { get; set; }
+        public double Damage { get; set; }
+        public int CritRate { get; set; }
+
+        public Ability(string abilityName, string soundEffect, double damage, int critRate)
+        {
+            AbilityName = abilityName;
+            SoundEffect = soundEffect;
+            CritRate = critRate;
+            Damage = damage;
+        }
+
+        public static bool critGenerator(int critRate)
+        {
+            Random rnd = new Random();
+            int num = rnd.Next(0, 100);
+            return num < critRate;
+        }
     }
 
     public void castAbility()
@@ -82,28 +108,5 @@ class Player
         Console.WriteLine($"[Name: {Name}, HP: {Health}]");
         Console.WriteLine($"Ouch! That dealt {oppDamage} damage, leaving me with {Health} HP!");
         Console.WriteLine("_______________________________________");
-    }
-
-    public class Ability
-    {
-        public string AbilityName { get; set; }
-        public string SoundEffect { get; set; }
-        public double Damage { get; set; }
-        public int CritRate { get; set; }
-
-        public Ability(string abilityName, string soundEffect, double damage, int critRate)
-        {
-            AbilityName = abilityName;
-            SoundEffect = soundEffect;
-            CritRate = critRate;
-            Damage = damage;
-        }
-
-        public static bool critGenerator(int critRate)
-        {
-            Random rnd = new Random();
-            int num = rnd.Next(0, 100);
-            return num < critRate;
-        }
     }
 }
